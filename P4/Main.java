@@ -1,0 +1,4 @@
+abstract class ClassroomDevice{abstract String operate();}
+interface Chargeable{String charge();String charge(int minutes);}
+class Tablet extends ClassroomDevice implements Chargeable{private String id;Tablet(String i){if(i==null||i.trim().isEmpty())throw new IllegalArgumentException();id=i;}String operate(){return "Tablet "+id+" displaying lesson";}public String charge(){return id+" charging";}public String charge(int m){return id+" charging for "+m+" minutes";}}
+public class Main{public static void main(String[]a){Tablet t=new Tablet("TAB-5");System.out.println(t.operate());System.out.println(t.charge());System.out.println(t.charge(30));}}
