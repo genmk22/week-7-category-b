@@ -1,0 +1,4 @@
+abstract class ArtPiece{private static int nextId=1;protected final int pieceId;protected String title;ArtPiece(String t){if(t==null||t.trim().isEmpty())throw new IllegalArgumentException();title=t;pieceId=nextId++;}abstract String describe();}
+class Painting extends ArtPiece{Painting(String t){super(t);}@Override String describe(){return "Painting: "+title+", framed on canvas";}}
+class Sculpture extends ArtPiece{Sculpture(String t){super(t);}@Override String describe(){return "Sculpture: "+title+", carved from stone";}}
+public class Main{public static void main(String[]a){System.out.println(new Painting("Sunset Fields").describe());System.out.println(new Sculpture("The Thinker II").describe());}}
