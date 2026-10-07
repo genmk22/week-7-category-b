@@ -1,0 +1,1 @@
+abstract class GardenTool{abstract String use();}class CuttingTool extends GardenTool{public CuttingTool(){}String use(){return "Using the tool in the garden, blade sharpened first";}}class Pruner extends CuttingTool{public Pruner(){}String use(){return super.use()+", then trimming branches precisely";}}public class Main{public static void main(String[]a){}}
