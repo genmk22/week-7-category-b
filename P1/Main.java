@@ -1,0 +1,4 @@
+interface Ringable{String ring();}
+class AlarmClock implements Ringable{private String time;AlarmClock(String t){if(t==null||t.trim().isEmpty())throw new IllegalArgumentException();time=t;}public String ring(){return "Alarm ringing for "+time;}}
+class Doorbell implements Ringable{private String location;Doorbell(String l){if(l==null||l.trim().isEmpty())throw new IllegalArgumentException();location=l;}public String ring(){return "Doorbell ringing at "+location;}}
+public class Main{static void ringAll(Ringable[] d){for(Ringable r:d)System.out.println(r.ring());}public static void main(String[]a){ringAll(new Ringable[]{new AlarmClock("7:00 AM"),new Doorbell("Front Door")});}}
